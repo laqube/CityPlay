@@ -48,7 +48,8 @@ while True:
 
                     randomNumber = random.randint(1, 3)
                     imgAI = cv2.imread(f'res/{randomNumber}.png', cv2.IMREAD_UNCHANGED)
-                    imgBG = cvzone.overlayPNG(imgBG, imgAI, (149, 310))
+                    imgAI = cv2.resize(imgAI,(300,300))
+                    imgBG = cvzone.overlayPNG(imgBG, imgAI, (100, 210))
 
                     # Player Wins
                     if (playerMove == 1 and randomNumber == 3) or \
