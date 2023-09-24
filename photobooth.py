@@ -4,33 +4,24 @@ import numpy as np
 from tkinter import Tk, Button
 from threading import Thread
 
-# Function to start the countdown
 def start_countdown():
     global countdown_duration
     countdown_duration = 3
 
-# Initialize the countdown duration
 countdown_duration = -1
 
-# Set the frame size
 frame_width = 960
 frame_height = 540
 
-# Create a black frame with the specified size
 frame_design = np.zeros((frame_height, frame_width, 3), dtype="uint8")
 
-# Open the webcam
 cap = cv2.VideoCapture(0)
 
-# Create a Tkinter window
 root = Tk()
 root.title("Camera App")
-
-# Add a button to start the countdown
 start_button = Button(root, text="Start Countdown", command=start_countdown)
 start_button.pack()
 
-# Run the camera loop in a separate thread
 def camera_loop():
     global countdown_duration
     while True:
@@ -54,9 +45,7 @@ def camera_loop():
     cap.release()
     cv2.destroyAllWindows()
 
-# Start the camera loop thread
 camera_thread = Thread(target=camera_loop)
 camera_thread.start()
 
-# Start the Tkinter main loop
 root.mainloop()
