@@ -85,7 +85,7 @@ while capture.isOpened():
 
         # Press SPACE if condition is match
 
-        if count_defects >= 4:
+        if count_defects >= 3.2:
                 pyautogui.press('space')
                 cv2.putText(frame, "JUMP", (115, 80), cv2.FONT_HERSHEY_SIMPLEX, 2, 2, 2)
 
