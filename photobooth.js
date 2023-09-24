@@ -40,3 +40,16 @@ cheeseBtn.addEventListener('click', () => {
         }
     }, 1000);
 });
+
+function toggle_visibility(id) {
+    var e = document.getElementById(id);
+    if (e.style.display == 'block') {
+        setTimeout(function() {
+            e.style.display = 'none';
+        }, 3000); // 3 seconds delay
+    } else {
+        setTimeout(function() {
+            e.style.display = 'block';
+        }, 3000); // 3 seconds delay
+    }
+}
